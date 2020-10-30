@@ -1,12 +1,13 @@
 from pathlib import Path
 from benedict import benedict
+import os
 import json
 
 #getting all the json files pathes from a given directory
 raw_files = Path('/home/ubuntu/bp-tmp-volatile').rglob('*.json')
 with open('output.jsonl', 'a') as outfile:
 
-            
+
     #iterating over the json files
     for file in raw_files:
         print(f"starting to modify {Path(file).name}")
@@ -25,5 +26,5 @@ with open('output.jsonl', 'a') as outfile:
             d.standardize()   
             print(Path(file).name+ " successfully changed")    
             json.dump(data, outfile)
-            outfile.write('\n')
+            outfile.write(os.linesep)
             print(Path(file).name+ " successfully added to Json lines file ")

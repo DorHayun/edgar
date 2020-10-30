@@ -3,7 +3,7 @@ from benedict import benedict
 import json
 
 #getting all the json files pathes from a given directory
-raw_files = Path('/Users/dorh/Desktop/exm').rglob('*.json')
+raw_files = Path('/home/ubuntu/bp-tmp-volatile').rglob('*.json')
 with open('output.jsonl', 'a') as outfile:
 
             
